@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: black;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;
+    margin: 0px auto;
+}
+nav a{
+    color: gold;
+    text-decoration: none;
+}
+nav img{
+    margin-left: -34px;
+    width: 100px;
+}
+nav h2{
+    font-size: 38px;
+}
+nav #nav-buttons-container {
+    background-color: #181818;
+    color: gold;
+    width: 800px;
+    height: 45px;
+    border-radius: 20px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+nav a:hover{
+    text-decoration: none;
+    color: gold;
+}
+nav #workout-now {
+    background-color: gold;
+    color: black;
+    width: 150px;
+    height: 40px;
+    border-radius: 25px;
+    box-shadow: 5px 10px 20px -10px rgb(225, 225, 98);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#calorie-button{
+    border-bottom: 2px solid gold;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculator-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: rgba(225,225,225, .1);
+    border :2px solid rgba(225,225,225, .2);
+    color: gold;
+    width: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(50px);
+}
+.by-sans{
+    justify-content: center;
+    display:flex;
+}
+.by-sans img{
+    animation-name: slideUp;
+    animation-duration: 1s;
+    width: 200px;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}

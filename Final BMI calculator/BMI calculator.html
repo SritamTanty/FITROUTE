@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--header starts-->
+<nav>
+    <a href="../Homepage 1.html"><img src="./assets/Fit Route Logo.png" alt=""></a>
+
+    <a href="../Homepage 1.html"><h2>Fit Route</h2></a>
+
+    <div id="nav-buttons-container">
+        <a href="../Homepage 1.html"><span id="home-button">Home</span></a>
+        <a href="../all exercises pages/index.html"><span id="all-exercise-button">All Exercises</span></a>
+        <a href=" "><span id="calorie-button">Calorie Calculator</span></a>
+        <a href="../Final BMI calculator/BMI calculator.html"><span id="BMI-button">BMI Calculator</span></a>
+        <a href=" "><span id="FAQ-button">FAQ</span></a>
+    </div>
+
+    <a href="../all exercises pages/index.html">
+        <div id="workout-now">
+            Workout Now
+        </div>
+    </a>
+
+</nav>
+    <!--header ends here-->
+    <div class="bmi-calculator-heading">
+        <h1>BMI Calculator</h1>
+    </div>
+<div class="main-box-border">
+        <div class="inputs">
+                <h1 class="age-heading">Age:</h1>
+            <div class="age">
+                <input type="range" id="age" min="1" max="100">
+                <span id="ageValue">0</span>
+            </div>
+                <h1>Weight (kg):</h1>
+            <div class="weight">
+                <input type="range" id="weight" min="30" max="150">
+                <span id="weightValue">0</span>
+            </div>
+                <h1>Height (cm):</h1>
+            <div class="height">
+                <input type="range" id="height" min="100" max="250">
+                <span id="heightValue">0</span>
+            </div>
+             <div class="enter-button">
+                <button onclick="calculateBMI()">Enter</button>
+             </div>
+        </div>
+</div>
+
+        <div class="result">
+            <p>Your BMI:</p>
+            <p id="bmiValue">0</p>
+            <h3 class="recom" id="recommendation"></h3>
+        </div>
+    <div class="by-sans">
+        <img src="./assets/By sans.png" alt="">
+    </div>
+    <script>
+        const ageSlider = document.getElementById('age');
+        const weightSlider = document.getElementById('weight');
+        const heightSlider = document.getElementById('height');
+        const ageValue = document.getElementById('ageValue');
+        const weightValue = document.getElementById('weightValue');
+        const heightValue = document.getElementById('heightValue');
+        const bmiValue = document.getElementById('bmiValue');
+        const recommendation = document.getElementById('recommendation');
+
+        ageSlider.addEventListener('input', () => {
+            ageValue.textContent = ageSlider.value;
+        });
+
+        weightSlider.addEventListener('input', () => {
+            weightValue.textContent = weightSlider.value;
+        });
+
+        heightSlider.addEventListener('input', () => {
+            heightValue.textContent = heightSlider.value;
+        });
+
+        function calculateBMI() {
+            const weightKg = parseFloat(weightSlider.value);
+            const heightM = parseFloat(heightSlider.value) / 100;
+            const bmi = weightKg / (heightM * heightM);
+            bmiValue.textContent = bmi.toFixed(2);
+
+            if (bmi < 18.5) {
+                recommendation.innerHTML = "You're underweight. <br> Try eating more and start working out.";
+            } else if (bmi >= 18.5 && bmi < 25) {
+                recommendation.innerHTML = "Congratulations! You're at a healthy weight.<br> Keep up the good work.";
+            } else if (bmi >= 25 && bmi < 30) {
+                recommendation.innerHTML = "You're overweight.<br> Consider adopting a healthier diet and exercise routine.";
+            } else {
+                recommendation.innerHTML = "You're obese. <br> It's important to focus on improving your lifestyle for better health.";
+            }
+            recommendation.style.marginLeft = "300px"
+            recommendation.style.marginRight="300px"
+            recommendation.style.fontSize="24px"
+        }
+    </script>
+</body>
+</html>

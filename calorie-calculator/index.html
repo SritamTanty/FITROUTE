@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Calculator</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav>
+        <a href="../Homepage 1.html"><img src="./assets/Fit Route Logo.png" alt=""></a>
+
+        <a href="../Homepage 1.html"><h2>Fit Route</h2></a>
+
+        <div id="nav-buttons-container">
+            <a href="../Homepage 1.html"><span id="home-button">Home</span></a>
+            <a href="../all exercises pages/index.html"><span id="all-exercise-button">All Exercises</span></a>
+            <a href=" "><span id="calorie-button">Calorie Calculator</span></a>
+            <a href="../Final BMI calculator/BMI calculator.html"><span id="BMI-button">BMI Calculator</span></a>
+            <a href=" "><span id="FAQ-button">FAQ</span></a>
+        </div>
+
+        <a href="../all exercises pages/index.html">
+            <div id="workout-now">
+                Workout Now
+            </div>
+        </a>
+
+    </nav>
+                
+    <div class="main">
+
+        <div class="calculator-container">
+            <h2 class="text-center" style="font-weight: bold;">Calorie Calculator</h2>
+            <p class="text-center">This calorie calculator app estimates the number of calories needed each day to maintain, lose, or gain weight.</p>
+
+            <form style="width: 400px;">
+
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" class="form-control">
+                        <option>-select-</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="text" class="form-control" id="age">
+                </div>
+
+                <div class="form-group">
+                    <label for="height">Height:</label>
+                    <input type="text" class="form-control" id="height" placeholder="in centimeters">
+                </div>
+
+                <div class="form-group">
+                    <label for="weight">Weight:</label>
+                    <input type="text" class="form-control" id="weight" placeholder="in kilograms">
+                </div>
+
+                <button type="button" class="btn btn-primary form-control" onclick="calculateCalories()">Calculate</button>
+
+            </form>
+
+            <div id="result"></div>
+        </div>
+
+    </div>
+    <div class="by-sans">
+        <img src="./assets/By sans.png" alt="">
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
